@@ -1,34 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Info o zadani
 
-## Getting Started
+## Inštalacia
 
-First, run the development server:
+Databaza je deploynuta online na Supabase serveri takže ju netreba
+nijak inštalovať v .env.local je uložený API key a URL s tým taktiež
+ne treba nič robiť, autentifikácia taktiež nie je žiadna
+
+Všetko čo teda treba urobiť je naklonovať si repo z gitu a
+nainštalovať nextjs aplikaciu
 
 ```bash
-npm run dev
-# or
-yarn dev
+1 git clone git@git.kemt.fei.tuke.sk:jt720ja/wt2022.git
+2 cd wt2022
+3 cd zadanie2
+4 npm i
+5 npm run build
+6 npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ak by boli nejaké problemy s inštaláciou aplikacia je taktiež aj deploynuta na verceli [https://jakub-tkac-wt2022-zadanie2.vercel.app/](https://jakub-tkac-wt2022-zadanie2.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Stack
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Frontend
 
-## Learn More
+- NextJS 12.2
 
-To learn more about Next.js, take a look at the following resources:
+    React Framework na manažovanie multipage aplikácií 12.2 preto lebo stale využíva na kompilaciu Babel a s 
+  
+    12.3 vyššie ktoré využívajú swc sú problemy pri pracovani so Styled Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Packages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Supabase js
+  
+  Knižnica na komunikáciu s Databazou
 
-## Deploy on Vercel
+- Styled Components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  Knižnica na pisanie css priamo v javascripte (react component)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- React Query
+
+  Tanstack knižnica na manažovanie asynchronych states a query
+
+### Backend Database (BaaS)
+
+- Supabase
+
+  Firebase alternatíva basenuta na PostgreSQL
+
+### Potrebný software na inštaláciu
+
+- NodeJS
