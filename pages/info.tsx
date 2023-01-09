@@ -104,22 +104,23 @@ export default function Information() {
             <h3>1. Uloha</h3>
             <ul>
               <p>
-                Frontend sa nachadza na landing page "/index". Jednotlive
-                komponenty sa nachadzaju v "/component" directory. Vsetky data
-                pochadzaju z "[name]Items.ts suborov ktore obsahuju objekt dat
-                ktore su nasledne mapovane do jednotlivych komponentov ako prop
-                (Product.tsx, MainNavbar.tsx, Sidebar.tsx...). Styled componenty
-                ktore boli vytvorene pomocou Styled Components npm packagu ktore
-                su reused alebo obsahuju prilis vela css sa nachadzaju v
-                "/components/styled" directory
+                Frontend sa nachadza na landing page &#34;/index&#34;.
+                Jednotlive komponenty sa nachadzaju v &#34;/component&#34;
+                directory. Vsetky data pochadzaju z &#34;[name]Items.ts&#34;
+                suborov ktore obsahuju objekt dat ktore su nasledne mapovane do
+                jednotlivych komponentov ako prop (Product.tsx, MainNavbar.tsx,
+                Sidebar.tsx...). Styled componenty ktore boli vytvorene pomocou
+                Styled Components npm packagu ktore su reused alebo obsahuju
+                prilis vela css sa nachadzaju v &#34;/components/styled&#34;
+                directory
               </p>
             </ul>
             <h3>2. Uloha</h3>
             <ul>
               <p>
-                Backend cast zadania sa nachadza na "/backend" route v aplikacii
-                kde sa nachadzaju 2 buttony kazdy vedie na iny route INSERT je
-                zadanie 2a, VYPIS_UDAJOV je zadanie 2b
+                Backend cast zadania sa nachadza na &#34;/backend&#34; route v
+                aplikacii kde sa nachadzaju 2 buttony kazdy vedie na iny route
+                INSERT je zadanie 2a, VYPIS_UDAJOV je zadanie 2b
               </p>
               <p>
                 Databaza sa nachadza na supabase serveroch a sklada sa z 2
@@ -139,24 +140,25 @@ export default function Information() {
               <h4>Uloha 2a.</h4>
               <ul>
                 <p>
-                  Zadanie sa nachadza na route "/backend/insert". Stranka
-                  obsahuje form do ktoreho sa da vlozit meno priezvisko ved a
-                  pribuzenstvo. Pri zmene sa vykonava handleChange handler ktory
-                  do useReducer hooku uklada data pri on click na button
-                  "pridat" sa spusti addhandleitem ktory data z reducer hooku
-                  posle na supabase databazu kde su nasledne ulozene. Nizsie sa
-                  nachadza aj preview dat ktore su fetchovane na kazdy refresh a
-                  pri kazdej zmene pomocou react query. defaultne su sortnute
-                  podla ID. Pri kazdom iteme sa nachadza aj Delete button ktory
-                  spusta handledatadelete handler ktory posle request na
-                  supabase databazu spolu s ID itemu ktory sa ma vymazat
+                  Zadanie sa nachadza na route &#34;/backend/insert&#34;.
+                  Stranka obsahuje form do ktoreho sa da vlozit meno priezvisko
+                  ved a pribuzenstvo. Pri zmene sa vykonava handleChange handler
+                  ktory do useReducer hooku uklada data pri on click na button
+                  &#34;pridat&#34; sa spusti addhandleitem ktory data z reducer
+                  hooku posle na supabase databazu kde su nasledne ulozene.
+                  Nizsie sa nachadza aj preview dat ktore su fetchovane na kazdy
+                  refresh a pri kazdej zmene pomocou react query. defaultne su
+                  sortnute podla ID. Pri kazdom iteme sa nachadza aj Delete
+                  button ktory spusta handledatadelete handler ktory posle
+                  request na supabase databazu spolu s ID itemu ktory sa ma
+                  vymazat
                 </p>
               </ul>
               <h4>Uloha 2b.</h4>
               <ul>
                 <p>
-                  Zadanie sa nachadza na route "/backend/vypis_udajov". Na
-                  stranke sa nachadza select pomocou ktoreho sa daju data
+                  Zadanie sa nachadza na route &#34;/backend/vypis_udajov&#34;.
+                  Na stranke sa nachadza select pomocou ktoreho sa daju data
                   sortnut podla meno priezviska alebo veku. Pri loade sa data
                   defaultne sortnu podla ID
                 </p>
@@ -165,18 +167,18 @@ export default function Information() {
               <ul>
                 <p>
                   Informacie o zadani sa nachadzaju v README.md alebo na route
-                  "/info"
+                  &#34;/info&#34;
                 </p>
               </ul>
               <h4>Uloha 2d.</h4>
               <ul>
                 <p>
                   Databaza je deploynuta na Supabase Serveri. Aplikacia je
-                  deploynuta na vercel serveri: "
+                  deploynuta na vercel serveri: &#34;
                   <a href="https://jakub-tkac-wt2022-zadanie2.vercel.app/">
                     https://jakub-tkac-wt2022-zadanie2.vercel.app/
-                  </a>{" "}
-                  "
+                  </a>
+                  &#34;
                 </p>
               </ul>
             </ul>
