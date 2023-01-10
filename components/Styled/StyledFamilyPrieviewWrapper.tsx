@@ -4,16 +4,44 @@ import { DEVICES } from "../../Theme";
 const StyledFamilyPrieviewWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 14rem;
   align-items: center;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 3em;
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
   ul {
-    margin-bottom: 3rem;
+    width: 100%;
+    height: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
   }
+  ol {
+    margin: 0;
+    width: 40%;
+  }
   li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+  }
+  input {
+    width: 40%;
+    font-size: 1.5rem;
+  }
+  select {
+    width: 40%;
     font-size: 2rem;
   }
   button {
@@ -22,16 +50,13 @@ const StyledFamilyPrieviewWrapper = styled.div`
     color: black;
     font-size: 1rem;
     font-weight: bold;
-    height: 10em;
-    width: 10em;
+    height: 7em;
+    width: 7em;
     cursor: pointer;
-    margin-bottom: 1.5em;
   }
   @media (${DEVICES["2XL"]}) {
-    padding: 0 8rem;
   }
   @media (${DEVICES.XL}) {
-    padding: 0 4rem;
     button {
       height: 7em;
       width: 7em;
@@ -39,9 +64,16 @@ const StyledFamilyPrieviewWrapper = styled.div`
     li {
       font-size: 1.5rem;
     }
+    input {
+      width: 65%;
+      font-size: 1rem;
+    }
+    select {
+      width: 65%;
+      font-size: 1.5rem;
+    }
   }
   @media (${DEVICES.LG}) {
-    padding: 0 1rem;
     button {
       height: 5em;
       width: 5em;

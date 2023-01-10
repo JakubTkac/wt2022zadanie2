@@ -5,6 +5,9 @@ const StyledBackendInsertFlex = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 4rem;
+  select {
+    font-size: 1.5rem;
+  }
   @media (${DEVICES["2XL"]}) {
     padding: 0 2.5rem;
   }
