@@ -5,6 +5,9 @@ const StyledBackendInsertFlex = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 4rem;
+  h2 {
+    font-size: 4rem;
+  }
   select {
     font-size: 1.5rem;
   }
@@ -16,6 +19,13 @@ const StyledBackendInsertFlex = styled.div`
   }
   @media (${DEVICES.LG}) {
     padding: 0 0.5rem;
+  }
+  input {
+    font-size: 1.5rem;
+  }
+  label {
+    font-weight: bolder;
+    font-size: 2rem;
   }
 `;
 

@@ -11,6 +11,14 @@ import StyledBackendInsertHeading from "../../components/Styled/StyledBackendIns
 
 const StyledPreview = styled.div``;
 
+const StyledSearch = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+`;
+
 export async function getStaticProps() {
   const { data } = await supabase.from("family_group").select("*").order("id");
   return {
@@ -23,6 +31,9 @@ export async function getStaticProps() {
 export default function BackendFilter({ data }) {
   const [sortData, setSortData] = useState(data);
   const [sortType, setSortType] = useState("id");
+  const [nameFilterData, setNameFilterData] = useState("");
+  const [surnameFilterData, setSurnameFilterData] = useState("");
+  const [ageFilterData, setAgeFilterData] = useState("");
 
   const sortArray = (type) => {
     const sorted = [...data].sort((a, b) => {
@@ -39,6 +50,21 @@ export default function BackendFilter({ data }) {
     sortArray(sortType);
   }, [sortType]);
 
+  let result = data
+    .filter((data) => {
+      return data.first_name.search(nameFilterData) != -1;
+    })
+    .filter((data) => {
+      return data.last_name.search(surnameFilterData) != -1;
+    });
+  // @ts-ignore
+  if (ageFilterData < 0 || ageFilterData === "") {
+  } else {
+    result = result.filter((data) => {
+      return data.age === Number(ageFilterData);
+    });
+  }
+
   return (
     <>
       <Head>
@@ -53,8 +79,7 @@ export default function BackendFilter({ data }) {
         <h2>Sort Selection</h2>
         <select
           name="sortSelector"
-          onChange={(e) => setSortType(e.target.value)}
-        >
+          onChange={(e) => setSortType(e.target.value)}>
           <option value="first_name">Meno</option>
           <option value="last_name">Priezvisko</option>
           <option value="age">Vek</option>
@@ -81,6 +106,61 @@ export default function BackendFilter({ data }) {
             );
           })}
         </StyledPreview>
+        <h2>Filter Data</h2>
+        <StyledSearch>
+          <div>
+            <label>Meno:</label>
+            <input
+              type="text"
+              name="first_name"
+              onChange={(event) => {
+                setNameFilterData(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label>Priezvisko:</label>
+            <input
+              type="text"
+              name="last_name"
+              onChange={(event) => {
+                setSurnameFilterData(event.target.value);
+              }}
+            />
+          </div>
+          <div>
+            <label>Vek:</label>
+            <input
+              type="number"
+              name="age"
+              value={ageFilterData}
+              onChange={(event) => {
+                // @ts-ignore
+                setAgeFilterData(event.target.value);
+              }}
+            />
+          </div>
+        </StyledSearch>
+        {result.map((member) => {
+          return (
+            <StyledFamilyPrieviewWrapper key={member.id}>
+              <ul>
+                <li>
+                  Meno: <b>{member.first_name}</b>
+                </li>
+                <li>
+                  Priezvisko: <b>{member.last_name}</b>
+                </li>
+                <li>
+                  Vek: <b>{member.age}</b>
+                </li>
+                <li>
+                  Pribuzenstvo: <b>{member.kinship}</b>
+                </li>
+              </ul>
+            </StyledFamilyPrieviewWrapper>
+          );
+        })}
       </StyledBackendInsertFlex>
     </>
   );
